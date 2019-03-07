@@ -1,13 +1,17 @@
 const path = require('path');
 const express = require('express');//This is a function
-
-const publicDirectory = path.join(__dirname,'../public/')
-
 const app = express();
+
+//Define paths for express config
+const publicDirectory = path.join(__dirname,'../public/');
+const viewPath = path.join(__dirname, '../templates/')
 
 //hbs 
 app.set('view engine', 'hbs')
+//customising hbs
+app.set('views', viewPath)
 
+//public directory
 app.use(express.static(publicDirectory));
 
 app.get('', (req, res) => {
