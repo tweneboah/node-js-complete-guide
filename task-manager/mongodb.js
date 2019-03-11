@@ -1,6 +1,9 @@
 //CRUD
-const mongodb = require('mongodb');
-const MongoClient = mongodb.MongoClient
+// const mongodb = require('mongodb');
+// const MongoClient = mongodb.MongoClient
+
+//using destructure
+const {MongoClient, ObjectID} = require('mongodb');
 
 //connecting
 const connectionURL = 'mongodb://127.0.0.1:27017'
@@ -13,17 +16,22 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error, client) => {
   
    const db = client.db(databaseName)
 
-   db.collection('users').findOne({name:'Emmanuel'}, (error, results)=> {
-     if(error) {
-       return console.log('Unable to fetch data')
-     }
-     console.log(results)
-   })
-   db.collection('users').find({age:30}).count((error, users) => {
-     console.log(users)
-   })
-   //Searching for imcompleted task
-   db.collection('tasks').find({completed:false}).toArray((error, task) => {
-     console.log(task)
-   })
+  //Deleting
+  //this remove all data the meet the criteria
+  db.collection('users').deleteMany({
+    age: 54
+  }).then((results) => {
+    console.log(results)
+  }).catch((error) => {
+    console.log(error)
+  })
+
+  db.collection('tasks')
+  .deleteOne({
+    description: 'Learning node js'
+  }).then((results)=>{
+    console.log(results)
+  }).catch((error) =>{
+    console.log(error)
+  })
 });
