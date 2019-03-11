@@ -10,11 +10,7 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error, client) => {
    if(error) {
      return  console.log('Unable to connect to database')
    }
-   //SEARCHING FOR A USER
-   //1. Determine the collection you want to search
-   //2. Use findOne api. This accept two arguement; object which determines our search critera and a callback function
-
-   //3. findOne returns only one document
+  
    const db = client.db(databaseName)
 
    db.collection('users').findOne({name:'Emmanuel'}, (error, results)=> {
@@ -23,6 +19,11 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error, client) => {
      }
      console.log(results)
    })
-    
-
+   db.collection('users').find({age:30}).count((error, users) => {
+     console.log(users)
+   })
+   //Searching for imcompleted task
+   db.collection('tasks').find({completed:false}).toArray((error, task) => {
+     console.log(task)
+   })
 });
