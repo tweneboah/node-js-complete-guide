@@ -8,17 +8,23 @@
  //creating a model
  const User = mongoose.model('User', {
    name: {
-        type: String
+        type: String,
+        required: true
    },
    age: {
-        type: Number
+        type: Number,
+        validate(value) {
+            if(value < 0){
+                throw new Error('Age must be a positive number')
+            }
+        }
    }
  })
 
  //Creating instance of the model
  const me = new User({
      name: 'Emmanuel',
-     age: 30
+     age: -3
  })
  //Saving to database. This return a promise
  me.save().then((result)=> {
@@ -27,3 +33,23 @@
  .catch((error)=> {
      console.log('Error', error)
  })
+
+// const Task = mongoose.model('task', {
+//     description: {
+//         type: String,
+//     },
+//     completed: {
+//         type: Boolean
+//     }
+// })
+
+// const task =  new Task ({
+//     description: 'Learn the mongoose Library',
+//     completed: false
+// })
+
+// task.save().then((task) => {
+//     console.log(task)
+// }).catch((error) => {
+//     console.log(error)
+// })
