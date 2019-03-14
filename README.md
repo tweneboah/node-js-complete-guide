@@ -1,2 +1,2 @@
-###  Am currently learning RESTful API
+###  Am currently learning RESTful API. Reading data
 
