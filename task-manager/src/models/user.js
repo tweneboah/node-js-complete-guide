@@ -41,19 +41,19 @@ const validator = require('validator')
    }
  })
 
- //Creating instance of the model
- const me = new User({
-     name: 'Akosua',
-     //age: -3,
-     email: 'twentekghana@gmail.com',
-     password: '987asswordoi'
- })
-// Saving to database. This return a promise
- me.save().then((result)=> {
-     console.log(result)
- })
- .catch((error)=> {
-     console.log('Error', error)
- })
+//  //Creating instance of the model
+//  const me = new User({
+//      name: 'Akosua',
+//      //age: -3,
+//      email: 'twentekghana@gmail.com',
+//      password: '987asswordoi'
+//  })
+// // Saving to database. This return a promise
+//  me.save().then((result)=> {
+//      console.log(result)
+//  })
+//  .catch((error)=> {
+//      console.log('Error', error)
+//  })
 
  module.exports = User;
