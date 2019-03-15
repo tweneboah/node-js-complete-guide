@@ -14,3 +14,10 @@ Task.findByIdAndDelete('5c89f2eca479d60a256176cb').then((task)=> {
     console.log(e)
 })
 
+// //Using async await
+// //Both id and age are asynchronous
+
+// const updateAgeCount = async (id, age) => {
+//  const user = await User
+// }
+
