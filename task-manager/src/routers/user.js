@@ -26,10 +26,10 @@ router.get('/users', async (req, res) => {
     } catch (error) {
         res.status(500).send();
     }
-})
+}),
 
 //fetching individual user
-
+ 
 router.get('/users/:id',  async (req, res) => {
 
      const _id = req.params.id

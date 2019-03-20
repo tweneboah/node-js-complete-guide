@@ -1,21 +1,9 @@
  const mongoose = require('mongoose')
  const validator = require('validator')
 
- mongoose.connect('mongodb://127.0.0.1:27017/task-manager-api', {
+ mongoose.connect('mongodb://127.0.0.1:27019/task-manager-api', {
    useNewUrlParser: true,
    useCreateIndex: true,
    useFindAndModify: false
  })
 
-
-// const Task = mongoose.model('task', {
-//     description: {
-//         type: String,
-//         trim: true,
-//         required:true
-//     },
-//     completed: {
-//         type: Boolean,
-//         default: false
-//     }
-// })
