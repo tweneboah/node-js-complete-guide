@@ -13,18 +13,23 @@
     </div>
 
     <div class="box">
-            
             <% newListItem.forEach((item)=>{%>
-                <div>
-                    <input type="checkbox">
-                <p><%=item%></p>
+
+            <form action="/delete" method="POST">
+                    <div class="item">
+                        <input name="checkbox" value="<%=item._id%>" type="checkbox" onChange="this.form.submit()">
+                    <p><%=item.name%></p>
+                    </div>
+            </form>
            <% }) %>
-        </div>
+
+           <form class="item" action="/" method="POST">
+            <input type="text" name="newItem" placeholder="Enter todo">
+            <button type="submit" name="list">+</button>
+         </form>
+      
     </div>
 
-    <form action="/" method="POST">
-       <input type="text" name="newItem" placeholder="Enter todo">
-       <button type="submit" name="button">Add Todo</button>
-    </form>
+ 
 </body>
 </html>
