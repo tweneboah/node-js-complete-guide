@@ -1,21 +1,23 @@
 {
-  "name": "todo",
+  "name": "authentication",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "engines": {
-    "node": "v10.15.1"
-  },
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
+    "dotenv": "^7.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "mongoose": "^5.4.20"
+    "md5": "^2.2.1",
+    "mongoose": "^5.4.20",
+    "mongoose-encryption": "^2.0.2",
+    "nodemon": "^1.18.10"
   }
 }
