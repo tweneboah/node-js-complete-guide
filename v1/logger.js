@@ -1,20 +1,6 @@
-const url = 'http://mylogger.io/log';
 
-function log(message) {
-
- console.log(message)
+function log(req, res, next){
+   console.log('Logging in user')
 }
 
-function age (a,b) {
- console.log(a+b)
-}
-
-
-// module.exports.logMe = log
-
-// module.exports.add = age;
-
-module.exports = {
- add: age,
- logMe: log
-}
+module.exports = log;
