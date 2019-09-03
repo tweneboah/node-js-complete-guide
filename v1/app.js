@@ -1,71 +1,24 @@
-const express = require('express');
+
+//=================
+//MODULES
+//================
+
+//A module is an object that has many properties but we are concern with module.exports  console.log(modules)
+
+//In node any function we create becomes global so to avoid this we use what is call module. 
+
+//Module encapsulate all functions and make it private
+
+//Any file we created apart from the the main file becomes a module
+
+//To make a module/function/object public we pass it to module.expoorts
 
 
-const app = express();
-
-//MIDDLEWARE
-app.use(express.json())
-
-
-
-const courses = [
- {id: 1, name: 'Node Js'},
- {id: 2, name: 'React Js'},
- {id: 3, name: 'Express Js'},
- {id: 4, name: 'GraphQl Js'}
-]
-
-
-//====================================================
-//ROUTES
-//====================================================
-app.get('/', (req, res) => {
- res.send('Hello Node Js')
-} )
-
-
-//Get all Courses
-app.get('/api/courses', (req, res) => {
- res.send(courses)
-})
-
-//===========================
-//ROUTES PARAMETERS
 //==================
+//USING THE MODULE
+//=================
 
-//1. This is use when you want a detail about a particular object to perform any function on it
+const logger = require('./logger');
 
-//Get a single Course
-app.get('/api/courses/:courseId', (req, res) => {
-   const course = courses.find((course) => course.id === parseInt(req.params.courseId))
-   if(!course){
-    //return 404
-    res.status(404).send('The course with the given ID is not found')
-   }else {
-    res.send(course)
-   }
-})
-
-//Query parameter is use to provide additional data to the backend services  and we use req.params to require values
-//We don't create a separate route for handling req.query
-
-//Sample route for query strings
-//localhost/post/2019/2?sortBy=name
-
-
-
-
-//=========================================================
-//ENVIRONMENT VARRIABLES
-//==========================================================
-
-//1. Setting up environment variable ->  export PORT=5000
-
-//SERVER
-
-app.listen(3000, () => {
-  console.log(`The server is runing`)
-})
-
-
+logger.logMessage('WELCOME')
 

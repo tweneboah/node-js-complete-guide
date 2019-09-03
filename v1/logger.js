@@ -1,6 +1,10 @@
 
-function log(req, res, next){
-   console.log('Logging in user')
+//This module is use to log messages
+//This modules are often middleware
+
+function logMessage(message){
+ console.log(message)
+
 }
 
-module.exports = log;
+module.exports.logMessage = logMessage
