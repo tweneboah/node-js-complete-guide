@@ -61,30 +61,6 @@ const course = new Course({
 createCourse();
 
 
-//QUERYING DATA
-
-//Any mongoose query API that returns a query means that we cab chain with other query methods like ;
-//limit(10) number of items
-//sort({name: 1}) //Means sort in ascending order -1 is for descending order
-
-//We use the find method to filter data
-
-const getCourse = async () => {
-  const courses = await Course.find({author: 'Emmanuel', isPublished: true});
-  console.log(courses)
-
-} 
-getCourse();
-
-
-
-//============
-//QUERYING OPERATORS
-//==============
-
-
-
-
 //======================
 //MIDDLEWARE
 //=====================
