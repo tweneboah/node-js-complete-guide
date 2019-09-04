@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "@hapi/joi": "^15.1.1",
+    "express": "^4.17.1",
+    "joi": "^13.1.0"
   }
 }
