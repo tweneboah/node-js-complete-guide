@@ -15,6 +15,7 @@ const $message = document.querySelector('#message')
 //  $message.insertAdjacentHTML('beforeend', html) this will add the text at the bottom of the div
 const messageTemplate = document.querySelector('#message-template').innerHTML
 
+//SENDING WELCOME MESSAGE
 socket.on('message', (welcomeMessageFromEvent) => {
    //Rendering this message to the screen
    const html = Mustache.render(messageTemplate, {
@@ -37,7 +38,6 @@ socket.on('message', (welcomeMessageFromEvent) => {
 
     //Fetching location
     navigator.geolocation.getCurrentPosition((position) => {
-        
 
       //This can also emit object as well
         socket.emit('sendLocation', {
@@ -83,8 +83,14 @@ socket.on('message', (welcomeMessageFromEvent) => {
         console.log(message)
     })
 
+    
     //receiving the event ftrom server
     socket.on('myLocation', (coord) => {
         console.log(coord)
+        //Rendering this message to the screen
+   const html = Mustache.render(messageTemplate, {
+    message: coord
+})
+$message.insertAdjacentHTML('beforeend', html)
     })
 

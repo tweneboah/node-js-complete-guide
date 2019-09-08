@@ -49,8 +49,6 @@
     })
   })
 
-
-
 //SERVER
   sever.listen(3000, (req, res) => {
   console.log('Server is runing right')
