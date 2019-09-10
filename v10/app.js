@@ -117,8 +117,9 @@ app.get('/logout', (req, res) => {
    res.redirect('/')
 })
 
-
+//======
 //SEVER
+//=======
 app.listen(3000, () => {
  console.log(`The server is up and runing`);
 })
