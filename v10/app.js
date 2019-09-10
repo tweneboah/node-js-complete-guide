@@ -109,8 +109,9 @@ app.post('/users/login', passport.authenticate('local', {
    res.send('login777');
 })
 
-
+//=====
 //LOGOUT
+//=========
 app.get('/logout', (req, res) => {
    req.logOut();
    res.redirect('/')
