@@ -20,7 +20,7 @@ app.use(express.static(__dirname + "/public"));
     useFindAndModify: false,
     useUnifiedTopology:true
     })
-    .then(() => console.log("DB Connected successfully"));
+    .then(() => console.log("DB Connected successfully.."));
 
 
 //ROUTES
