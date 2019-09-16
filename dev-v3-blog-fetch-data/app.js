@@ -54,7 +54,16 @@ app.post('/posts', (req, res) => {
 
 })
 
-
+//FETCH POST
+app.get('/posts', (req, res) => {
+    Post.find({}, (err, allPosts) => {
+        if(err){
+            console.log(err)
+        }else{
+            res.send(allPosts)
+        }
+    })
+})
 //SERVER
 const PORT = process.env.PORT || 3000
 app.listen(PORT,() => {
