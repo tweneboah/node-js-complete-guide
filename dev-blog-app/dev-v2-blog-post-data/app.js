@@ -16,7 +16,7 @@ const app = express();
     useFindAndModify: false,
     useUnifiedTopology:true
     })
-    .then(() => console.log("DB Connected successfully"));
+    .then(() => console.log("DB Connected successfully.."));
 
     //MIDDLEWARE
 app.set('view engine', 'ejs');
