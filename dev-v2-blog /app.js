@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 
 //1.GET the form
 app.get('/posts/new', (req, res) => {
-    res.render('createPost')
+    res.render('posts/createPost')
 })
 
 //POST LOGIC
