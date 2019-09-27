@@ -1,0 +1,35 @@
+<% include ../partials/header %> 
+
+
+<link rel="stylesheet" href="/css/createPostForm.css">
+<div>
+    <h1>A Post</h1>
+   
+    <h2><%=post.title%></h2>
+    <p><%=post.description%></p>   
+    <h5 class="text-warning">Created by: <%=post.author.username%></h5>
+   <h3>Comments</h3>
+    <p><a class="btn btn-success" href="/posts/<%=post.id%>/comments/new">Add Comment</a></p>
+
+     <%if( authUser && post.author.id.equals(authUser._id)){%>
+        <form action="/posts/<%=post._id%>?_method=DELETE" method='POST'>
+            <button class="btn btn-danger">Delete Post</button>
+        </form>
+    
+        <div>
+            <a class="btn btn-warning" href="/posts/update/<%=post.id%>/new">Edit Post</a>
+        </div>
+     <%}{%>
+          <!--Display nothing-->
+    <% }%>
+    <%post.comments.forEach((post) => {%>
+        <h5><%=post.author.username%></h5>
+         <p><%=post.text%></p>
+    <% })%>
+</div>
+
+<div>
+   
+</div>
+<% include ../partials/footer %> 
+
