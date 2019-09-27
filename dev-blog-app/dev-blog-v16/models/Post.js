@@ -11,8 +11,13 @@ const postSchema = new mongoose.Schema({
     ],
     //embeding the login user who is creating this post
 
+    //It's recommended to save the id of the logged in user as mongoDB ObjectId
+
     author: {
-        id: String,
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        },
         username: String
     }
    
