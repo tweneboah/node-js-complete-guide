@@ -105,16 +105,16 @@ router.get('/posts/update/:id/new', middleware.isLogin,  (req, res) => {
 
             if(req.isAuthenticated()) {
                 //Check if the user is authenicated
-                if(foundPost.author.id === req.user.id){
+                if(foundPost.author.id.equals(req.user.id)){
                 //If authenticated, does this user owns this post?
                     res.render('posts/editPost.ejs', {post: foundPost})
                 }else {
                     //If no return him back from where he is coming from
-                    res.send('This is not for you')
+                    res.redirect('back')
                 }
                  
             }else {
-                res.send('YOU ARE not AUTHORISED')
+                res.send(`<h1>You are not authorised to do this!!</h1>`)
             }
            
         }

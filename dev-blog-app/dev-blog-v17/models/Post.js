@@ -12,7 +12,10 @@ const postSchema = new mongoose.Schema({
     //embeding the login user who is creating this post
 
     author: {
-        id: String,
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        },
         username: String
     }
    
