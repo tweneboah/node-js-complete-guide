@@ -11,7 +11,7 @@ const postSchema = new mongoose.Schema({
     ],
     //embeding the login user who is creating this post
 
-    //It's recommended to save the id of the logged in user as mongoDB ObjectId
+    //It's recommended to save the id of the logged in user as mongoDB ObjectId...
 
     author: {
         id: {
