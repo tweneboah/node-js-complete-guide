@@ -16,7 +16,7 @@ middlewareObj.checkPostOwnership =   (req, res, next) => {
      if(req.isAuthenticated()) {
         Post.findById(req.params.id, (err, foundPost) => {
             if(err){
-                //If there is error redirect back
+                //If there is error redirect back..
                 res.redirect('back')
             }else {
          //If authenticated, does this user owns this post?. We can make the middleware to render edit always but it's advisable to move to the next in our code
